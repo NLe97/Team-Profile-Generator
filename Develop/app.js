@@ -20,7 +20,6 @@ function managerPrompt() {
             name: "name",
             message: "What is the Manager's name?"
                  },
-
                  {
             type: "input",
             name: "id",
@@ -31,19 +30,97 @@ function managerPrompt() {
             name: "email",
             message: "What is the manager's email?"
                  },
-                 
+                 {
+            type: "input",
+            name: "officeNumber",
+            message: "What is the office phone number?"     
+                 },
+            ]).then(function(answers){
+               const manager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber);
+               employees.push(manager);
+               addEmployee();
+            });
+};
+
+function engineerPrompt() {
+
+     return inquirer
+          .prompt([{
+               type: "input",
+               name: "name",
+               message: "What is the engineer's name?"
+          },
+          {
+               type: "input",
+               name: "id",
+               message: "what is the engineer's ID?"
+          },
+          {
+               type: "input",
+               name: "email",
+               message: "what is the engineer's email?"
+          },
+          {
+               type: "input",
+               name: "github",
+               message: "what is your Github user name?"
+          },   
+
+          }).then(function(answers){
+               const engineer = new Engineer(answers.name,answers.id,answers.email,answers.github);
+               employees.push(engineer);
+               addEmployee();
+          });
+};
+
+function internPrompt() {
+
+     return inquirer
+          .prompt([{
+               type:
+               name:
+               message:
+          },
+          {
+               type:
+               name:
+               message:
+          },   
+          {
+               type:
+               name:
+               message:
+          },   
+          {
+               type:
+               name:
+               message:
+          },   
+          
+     
+     
+     
+     
+     
+     
+          ])
 
 
 
 
 
 
-            ])
+
+
+
+
+
+
+
+
 
 
 }
-
-
 
 
 
